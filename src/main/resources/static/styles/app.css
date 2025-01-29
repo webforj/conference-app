@@ -1,0 +1,163 @@
+/* Define application theme */
+
+dwc-app-layout {
+  --dwc-app-layout-header-height: 60px;
+  --dwc-app-layout-footer-width: 60px;
+}
+
+.app-nav dwc-tab::part(tab-wrapper) {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 100px;
+}
+
+.app-nav dwc-tab::part(prefix) {
+  --dwc-icon-size: 2em;
+  cursor: pointer;
+}
+
+.app-nav dwc-tab[active]::part(prefix) {
+  color: var(--dwc-color-primary);
+}
+
+.main-layout {
+  overflow: scroll;
+}
+
+.main-layout::part(content) {
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--dwc-space-m);
+  margin: 5px auto;
+  overflow: visible !important;
+  padding-bottom: 50vh;
+}
+
+/************* Home CSS *************/
+
+.home__title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.home__subtitle {
+  margin: 0;
+  font-size: 1.5em;
+  max-width: 60%;
+  text-align: center;
+}
+
+.example-program {
+  background: var(--dwc-surface-3);
+  position: relative;
+  width: 300px;
+  height: 568px;
+  margin: 20px auto;
+  border: 1px solid black;
+  box-shadow: 0 0 0 10px black, 0 3px 22px black;
+  border-radius: 32px;
+  overflow: hidden;
+  padding: var(--dwc-space-s) 0;
+  padding-bottom: 0;
+  margin-top: calc(var(--dwc-font-size-2xl) + 0.75em);
+}
+
+/************* Dashboard Styles *************/
+
+.dashboard-section{
+  padding: var(--dwc-space-m);
+  border-radius: var(--dwc-border-radius-m);
+  background-color: var(--dwc-surface-3);
+}
+
+/* ==Charts== */
+
+.dashboard-chart{
+  flex: 1 1 48%;
+  min-width: 320px;
+  padding: var(--dwc-space-m);
+  border-radius: var(--dwc-border-radius-m);
+  background-color: var(--dwc-surface-3);
+}
+
+/* ==Product Table== */
+
+.table::part(avatar-renderer) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.table::part(avatar-img) {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+
+.table::part(avatar-text) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==Team Cards==*/
+.teamcard__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: var(--dwc-space-m);
+  width: 100%;
+}
+
+.team__card {
+  background-color: var(--dwc-surface-3);
+  border-radius: var(--dwc-border-radius-m);
+  padding: var(--dwc-space-2xl) var(--dwc-space-xl);
+  display: flex;
+  flex: 1 1 40%;
+  gap: 1.5rem;
+  align-items: center;
+  flex-direction: row;
+  transition: background-color 0.25s ease;
+}
+
+.team__card.is-active {
+  background-color: #7db1ff;
+}
+
+.team__card:hover {
+  background-color: #abccfd;
+  cursor: pointer;
+}
+
+.team__avatar {
+  width: var(--dwc-size-2xl);
+  border-radius: var(--dwc-border-radius-round);
+}
+
+.team__username {
+  color: var(--dwc-color-black);
+  font-size: var(--dwc-font-size-l);
+}
+
+.team__position {
+  color: var(--dwc-color-gray-50);
+}
+
+.button__team-card-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--dwc-color-primary-text);
+}
+
+.button__team-card-close:hover {
+  cursor: pointer;
+}
+/************* Docs Styles *************/
+
+/* .main-layout::part(content) {
+  padding: 0px !important;
+} */
