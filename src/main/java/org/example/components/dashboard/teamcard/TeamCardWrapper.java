@@ -10,6 +10,7 @@ import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.html.elements.Strong;
 import com.webforj.component.icons.FeatherIcon;
 import com.webforj.component.icons.IconButton;
+import com.webforj.component.layout.flexlayout.FlexLayout;
 
 public class TeamCardWrapper extends Composite<Div> implements CardClickListener {
   ArrayList<TeamCard> teamCards = new ArrayList<>();
@@ -29,7 +30,7 @@ public class TeamCardWrapper extends Composite<Div> implements CardClickListener
     img.addClassName("team__avatar");
 
     IconButton exit = new IconButton(FeatherIcon.X.create());
-    exit.onClick(event -> {dialog.close();});
+    exit.onClick(event -> dialog.close());
 
     Strong name = new Strong();
     name.addClassName("team__username")
@@ -39,8 +40,8 @@ public class TeamCardWrapper extends Composite<Div> implements CardClickListener
       .setText(card.getPosition().getText());
 
 
-    dialog.addClassName("contact--info")
-      .add(img, exit, name, position);
+    dialog.add(FlexLayout.create(img, exit).justify().between().align().start().build(), 
+    name, position);
       dialog.setBlurred(true);
 
     getBoundComponent().add(dialog);

@@ -1,10 +1,14 @@
 package org.example.views;
 
+import static com.webforj.App.console;
+
 import java.util.Set;
 
+import com.webforj.App;
 import com.webforj.component.Component;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.H1;
+import com.webforj.component.html.elements.Img;
 import com.webforj.component.icons.TablerIcon;
 import com.webforj.component.layout.applayout.AppLayout;
 import com.webforj.component.layout.applayout.AppLayout.DrawerPlacement;
@@ -40,7 +44,7 @@ public class MainLayout extends Composite<AppLayout> implements DidEnterObserver
 
   @Override
   public void onDidEnter(DidEnterEvent event, ParametersBag parameters) {
-    setSelectListener();
+    // setSelectListener();
   }
 
   private void setNav() {
@@ -57,6 +61,7 @@ public class MainLayout extends Composite<AppLayout> implements DidEnterObserver
     
     self.setDrawerPlacement(DrawerPlacement.HIDDEN);
     self.addToHeader(nav);
+    self.addToHeader(new Img("ws://logo.png").addClassName("header-logo"));
   }
 
   private void onNavigate(NavigateEvent ev) {

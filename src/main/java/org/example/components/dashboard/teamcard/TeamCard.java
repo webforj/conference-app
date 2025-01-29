@@ -7,7 +7,7 @@ import com.webforj.component.html.elements.Img;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.html.elements.Strong;
 
-public class TeamCard extends Composite<Div> implements HasElementClickListener {
+public class TeamCard extends Composite<Div> implements HasElementClickListener<Div> {
   Img avatar = new Img();
   Strong username = new Strong();
   Paragraph position = new Paragraph();

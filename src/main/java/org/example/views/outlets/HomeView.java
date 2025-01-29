@@ -21,7 +21,8 @@ public class HomeView extends Composite<FlexLayout> implements HasVisibility{
   private FlexLayout self = getBoundComponent();
 
   public HomeView() {
-    self.setPadding("0 0 50vh 0");
+    // self.setPadding("0 0 50vh 0");
+    self.addClassName("main-class");
     self.setAlignment(FlexAlignment.CENTER);
     self.setDirection(FlexDirection.COLUMN);
     self.add(new Header(), 
