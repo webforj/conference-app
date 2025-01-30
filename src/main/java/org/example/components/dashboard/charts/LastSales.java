@@ -24,7 +24,8 @@ public final class LastSales extends Composite<Div> {
     self.addClassName("dashboard-chart");
     self.add(title);
     title.setStyle("margin", "0 0 11px 0");
-    chart.setStyle("width", "100vw");
+    chart.setStyle("width", "100%"); 
+
 
     Map<String, Object> options = new Gson().fromJson(Assets.contentOf("static/data/charts.json"),
         new TypeToken<Map<String, Object>>() {

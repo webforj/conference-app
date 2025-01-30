@@ -17,11 +17,10 @@ public class DocsView extends Composite<Iframe> implements HasVisibility{
   private Iframe self = getBoundComponent();
 
   public DocsView() {
-    self.setHeight("100%");
-    self.setWidth("100%");
+    self.setHeight("100vh");
+    self.setWidth("100vw");
     self.setAttribute("loading", "lazy");
     self.setStyle("border", "none");
-    self.setStyle("overflow", "hidden");
     self.setSrc("https://docs.webforj.com/");
     // setTheme();
   }
@@ -52,5 +51,6 @@ public class DocsView extends Composite<Iframe> implements HasVisibility{
         }
       """);
     }
+
   }
 }

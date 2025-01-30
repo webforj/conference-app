@@ -22,17 +22,27 @@ dwc-app-layout {
 }
 
 .main-layout {
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
-.main-layout::part(content) {
+.main-class {
   max-width: 1500px;
-  display: flex;
-  flex-direction: column;
   gap: var(--dwc-space-m);
   margin: 5px auto;
   overflow: visible !important;
   padding-bottom: 50vh;
+}
+
+.main-layout::part(content) {
+  padding: 16px 0;
+}
+
+.header-logo{
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 150px;
+  height: 36px;
 }
 
 /************* Home CSS *************/
@@ -67,10 +77,43 @@ dwc-app-layout {
 
 /************* Dashboard Styles *************/
 
+.dashboard__counters-wrapper {
+  width: 100%;
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dwc-space-m);
+  overflow: visible !important;
+}
+
+/** [animated-counter] is the container of the animated-counter component */
+.dashboard__counters-wrapper [animated-counter] {
+  flex: 1 1 24%;
+}
+
 .dashboard-section{
   padding: var(--dwc-space-m);
   border-radius: var(--dwc-border-radius-m);
   background-color: var(--dwc-surface-3);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dwc-space-m);
+  padding: var(--dwc-space-m);
+  border-radius: var(--dwc-border-radius-m);
+  background-color: var(--dwc-surface-3);
+  box-shadow: var(--dwc-shadow-1);
+}
+
+.card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dwc-space-m);
+  font-size: var(--dwc-font-size-l);
+  font-weight: bold;
 }
 
 /* ==Charts== */
@@ -146,16 +189,166 @@ dwc-app-layout {
   color: var(--dwc-color-gray-50);
 }
 
-.button__team-card-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: var(--dwc-color-primary-text);
-}
-
 .button__team-card-close:hover {
   cursor: pointer;
 }
+
+/* ==Todo List==*/
+
+.card__todo {
+  max-height: 450px;
+  margin-bottom: 35px;
+  width: 50%;
+}
+
+.todo__toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--dwc-space-s);
+  overflow: visible !important;
+  border-bottom: 1px solid var(--dwc-color-default) !important;
+  padding-bottom: var(--dwc-space-m);
+}
+
+.todo__remainingItems {
+  flex: 1;
+}
+
+.todo__input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--dwc-space-s);
+  overflow: visible !important;
+}
+
+.todo__input {
+  flex: 1 1 100%;
+}
+
+.todo__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dwc-space-s);
+  flex: 1;
+  max-height: 262px;
+  overflow: auto !important;
+}
+
+.todo__item[checked] {
+  text-decoration: line-through;
+}
+
+/* ==Inbox Widget== */
+  .card--inbox {
+    max-height: 450px;
+    margin-bottom: 35px;
+    width: 50%;
+  }
+  
+  .card__messagesWrapper {
+    overflow: auto !important;
+  }
+  
+  .card__message {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: var(--dwc-space-s);
+    cursor: var(--dwc-cursor-click);
+    transition: background-color var(--dwc-transition);
+    border-bottom: thin solid var(--dwc-color-default);
+    border-radius: var(--dwc-border-radius);
+  }
+  
+  .card__message:last-child {
+    border-bottom: none !important;
+    border-style: none !important;
+  }
+  
+  .card__message:hover {
+    background-color: var(--dwc-color-primary-alt);
+  }
+  
+  .card__messageAvatar {
+    display: flex;
+    align-items: center;
+    width: var(--dwc-size-l);
+    height: var(--dwc-size-l);
+    border-radius: var(--dwc-border-radius-round);
+  }
+  
+  .card__messageAvatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--dwc-border-radius-round);
+  }
+  
+  .card__messageWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card__messageContent {
+    font-size: var(--dwc-font-size-s);
+    color: var(--dwc-color-gray-text);
+  }
+  
+  .dialog--reply .dialog__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dwc-space-m);
+  }
+
+  .dialog--reply::part(dialog) {
+    padding-bottom: 3px;
+  }
+
+  .dialog--reply::slot(header) {
+    border-bottom: none;
+  }
+  
+  .dialog__message::part(input) {
+    overflow: visible;
+  }
+
+  .button__reply {
+    background: rgba(0,0,0,0);
+    margin-bottom: 12px;
+  }
+
+  .button__reply::part(control) {
+    padding: 20px;
+  }
+
+  .reply-form__no-subject-warning {
+    display: none;
+    color: red;
+    text-align: center;
+    background-color: transparent;
+
+  }
+  
+  .reply-form-container__no-subject {
+    animation-name: horizontal-shaking;
+    animation-duration: .3s !important;
+    animation-iteration-count: 2 !important;
+    animation-timing-function: ease-in-out !important;
+  }
+  
+  @keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+  }
+
+  .message-sent {
+    display: flex;
+    justify-content: center;
+  }
+
 /************* Docs Styles *************/
 
 /* .main-layout::part(content) {
