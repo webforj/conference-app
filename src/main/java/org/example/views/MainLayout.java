@@ -1,12 +1,9 @@
 package org.example.views;
 
-import static com.webforj.App.console;
-
 import java.util.Set;
 
 import org.example.components.ThemeToggle;
 
-import com.webforj.App;
 import com.webforj.component.Component;
 import com.webforj.component.Composite;
 import com.webforj.component.html.elements.H1;
