@@ -21,10 +21,6 @@ dwc-app-layout {
   color: var(--dwc-color-primary);
 }
 
-.main-layout {
-  /* overflow: scroll; */
-}
-
 .main-class {
   max-width: 1500px;
   gap: var(--dwc-space-m);
@@ -43,6 +39,29 @@ dwc-app-layout {
   left: 16px;
   width: 150px;
   height: 36px;
+  
+}
+
+@media (max-width: 792px) {
+  .header-logo{
+    display: none;
+  }
+
+  .button__theme-toggle{
+    display: none;
+  }
+}  
+
+.button__theme-toggle {
+  height: var(--dwc-size-l);
+  align-content: center;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.button__theme-toggle:hover {
+  cursor: pointer;
 }
 
 /************* Home CSS *************/
@@ -146,13 +165,6 @@ dwc-app-layout {
 }
 
 /* ==Team Cards==*/
-.teamcard__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: var(--dwc-space-m);
-  width: 100%;
-}
 
 .team__card {
   background-color: var(--dwc-surface-3);

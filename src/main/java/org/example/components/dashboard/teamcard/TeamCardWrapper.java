@@ -4,19 +4,23 @@ import java.util.ArrayList;
 
 import com.webforj.component.Composite;
 import com.webforj.component.dialog.Dialog;
-import com.webforj.component.html.elements.Div;
 import com.webforj.component.html.elements.Img;
 import com.webforj.component.html.elements.Paragraph;
 import com.webforj.component.html.elements.Strong;
 import com.webforj.component.icons.FeatherIcon;
 import com.webforj.component.icons.IconButton;
 import com.webforj.component.layout.flexlayout.FlexLayout;
+import com.webforj.component.layout.flexlayout.FlexWrap;
 
-public class TeamCardWrapper extends Composite<Div> implements CardClickListener {
+public class TeamCardWrapper extends Composite<FlexLayout> implements CardClickListener {
+  
+  FlexLayout self = getBoundComponent();
   ArrayList<TeamCard> teamCards = new ArrayList<>();
 
   public TeamCardWrapper(){
-    getBoundComponent().addClassName("teamcard__wrapper");
+    self.setWrap(FlexWrap.WRAP);
+    self.setSpacing("var(--dwc-space-m)");
+    self.setWidth("100%");
   }
 
   public void onCardClicked(TeamCard card) {

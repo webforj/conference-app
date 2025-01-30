@@ -21,8 +21,7 @@ public class EcomView extends Composite<FlexLayout> implements HasVisibility{
   private FlexLayout self = getBoundComponent();
 
   public EcomView() {
-    self.setHeight("100vh");
-    self.setStyle("overflow", "visible");
+    self.addClassName("main-class");
     self.setAlignment(FlexAlignment.CENTER);
     self.setDirection(FlexDirection.COLUMN);
     self.add(new SearchBar(), new ProductsSection(), new DetailsSection(), new CheckoutSection());

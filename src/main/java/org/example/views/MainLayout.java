@@ -4,6 +4,8 @@ import static com.webforj.App.console;
 
 import java.util.Set;
 
+import org.example.components.ThemeToggle;
+
 import com.webforj.App;
 import com.webforj.component.Component;
 import com.webforj.component.Composite;
@@ -60,8 +62,7 @@ public class MainLayout extends Composite<AppLayout> implements DidEnterObserver
     nav.addTab(new Tab("Docs", TablerIcon.create("book")));
     
     self.setDrawerPlacement(DrawerPlacement.HIDDEN);
-    self.addToHeader(nav);
-    self.addToHeader(new Img("ws://logo.png").addClassName("header-logo"));
+    self.addToHeader(new Img("ws://logo.png").addClassName("header-logo"), nav, new ThemeToggle());
   }
 
   private void onNavigate(NavigateEvent ev) {

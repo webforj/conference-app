@@ -2,6 +2,7 @@ package org.example.sections.home;
 
 import java.util.HashMap;
 
+import org.example.components.home.AppLayoutSample;
 import org.example.components.home.DemoSection;
 
 import com.webforj.component.Composite;
@@ -22,6 +23,7 @@ public class AppLayoutSection extends Composite<FlexLayout>{
     initExampleCode();
     initIFrame();
     self.add(new DemoSection(title, subtitle, exampleCode, iframe));
+    // self.add(new DemoSection(title, subtitle, exampleCode, new AppLayoutSample()));
     self.setJustifyContent(FlexJustifyContent.CENTER);
     self.setSpacing("var(--dwc-space-l)");
     self.setWidth(1500);
