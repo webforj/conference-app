@@ -25,9 +25,9 @@ public class ProductsSection extends Composite<FlexLayout> {
         new ProductCard("context://static/img/product-3.png", "Designer Awesome T-shirt", "$49", "★★★★★", "235 pcs"),
         new ProductCard("context://static/img/product-4.png", "Jones Awesome T-shirt", "$29", "★★★★★", "385 pcs"),
         new ProductCard("context://static/img/product-5.png", "Green T-shirt for Men", "$49", "★★☆☆☆", "25 pcs"),
-        new ProductCard("context://static/img/product-6.png", "Blue Awesome Hoodie", "$19", "★★★☆☆", "39 pcs"),
-        new ProductCard("context://static/img/product-7.png", "Jones Men's T-shirt (Green)", "$99", "★★★★★", "36 pcs"),
-        new ProductCard("context://static/img/product-8.png", "Red Hoodie for Men", "$29", "★★★★★", "128 pcs")
+        new ProductCard("context://static/img/product-6.png", "Blue Awesome Hoodie", "$19", "★★★☆☆", "39 pcs");
+        // new ProductCard("context://static/img/product-7.png", "Jones Men's T-shirt (Green)", "$99", "★★★★★", "36 pcs"),
+        // new ProductCard("context://static/img/product-8.png", "Red Hoodie for Men", "$29", "★★★★★", "128 pcs")
     );
   }
 
