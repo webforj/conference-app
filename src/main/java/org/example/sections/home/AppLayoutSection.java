@@ -37,7 +37,7 @@ public class AppLayoutSection extends Composite<FlexLayout>{
   private void initIFrame(){
     iframe.setAttribute("id", "app_layout_iframe");
     iframe.setAttribute("loading", "lazy");
-    iframe.setSrc("http://localhost:8888/webapp/controlsamples/AppLayoutConferenceDemo?");
+    iframe.setSrc("https://demo.webforj.com/webapp/controlsamples/applayoutconferencedemo?");
     iframe.addClassName("example-program");
   }
 }
