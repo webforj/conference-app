@@ -28,7 +28,7 @@ public class BillingInfo extends Composite<FlexLayout> {
             .setJustifyContent(FlexJustifyContent.EVENLY)
             .setSpacing("40px")
             .setPadding("20px")
-            .setStyle("margin", "10px 70px");
+            .setStyle("margin", "10px 45px");
 
         Paragraph title = new Paragraph("Billing Information");
         title.setStyle("font-size", "16px");
