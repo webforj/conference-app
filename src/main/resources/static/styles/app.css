@@ -22,7 +22,7 @@ dwc-app-layout {
 }
 
 .main-class {
-  max-width: 1500px;
+  max-width: 1200px;
   gap: var(--dwc-space-m);
   margin: 5px auto;
   overflow: visible !important;
